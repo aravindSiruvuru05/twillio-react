@@ -68,3 +68,20 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+ chatClient
+            .getChannelByUniqueName(currName)
+            .then(function (channel) {
+              setIsLoading('')
+              channel.add(newMember).then((m) => {
+                setActionMessage(newMember + ' joined the group')
+              })
+              console.log('Found existing channel:', currName)
+              setCurrChannel(channel)
+            })
+            .catch(function (err) {
+              setIsLoading(err.message, '--')
+            })
