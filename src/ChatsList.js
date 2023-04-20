@@ -61,7 +61,7 @@ const ChatsList = ({ chatClient, userIdentity, currChatName, onChatChange }) => 
               style={{ cursor: 'pointer', marginTop: '10px', fontWeight: `${currChatName === c.uniqueName ? 800 : 'inherit'}` }}
               onClick={() => onChatChange(c)}
             >
-              <h5>{c.uniqueName}</h5>
+              <h5>{c.friendlyName}</h5>
             </li>
           )
         })}

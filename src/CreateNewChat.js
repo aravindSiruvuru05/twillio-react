@@ -30,7 +30,7 @@ const CreateNewChat = ({ chatClient, userIdentity, onCreateChat }) => {
   }
 
   const handleGroupNameChange = () => {
-    createNewChat(chatClient, `${name}_group`, name)
+    createNewChat(chatClient, `${name.replace(' ', '_')}_group`, name)
   }
   return (
     <>
