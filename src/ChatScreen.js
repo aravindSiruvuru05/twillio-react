@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
 import { Client as TwilioClient } from 'twilio-chat'
-import { generateRandomName } from './utils'
 import ChatsList from './ChatsList'
 import CreateNewChat from './CreateNewChat'
 import ChatWindow from './ChatWindow'
@@ -26,7 +25,7 @@ const ChatScreen = () => {
 
   const getChatClient = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/twilio/token`, {
+      const res = await fetch('https://2mdtmkwci2.execute-api.us-east-1.amazonaws.com/dev/twilio/token', {
         headers: {
           Authorization:
             'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNMejZEdWlRcVF6YXAweFV1QkF0eiJ9.eyJpc3MiOiJodHRwczovL2Rldi0wdmYyZzJ1c29ubndpNDRyLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2M2U1NDAyNzU5NWM5YTk4NjdmMGM3NjkiLCJhdWQiOlsiaHR0cHM6Ly9yZWRnaXN0cnkuY29tIiwiaHR0cHM6Ly9kZXYtMHZmMmcydXNvbm53aTQ0ci51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjc5OTg1ODk3LCJleHAiOjE2ODAwNzIyOTcsImF6cCI6IkdBQTBHWFBtOWdzUHJJSXBMS0N0c0p6aUNJcUFpSGVZIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCBhZGRyZXNzIHBob25lIG9mZmxpbmVfYWNjZXNzIiwiZ3R5IjoicGFzc3dvcmQifQ.T2GSk2OoBioJZNg4w3m2d8W5reaHbzBS0kki89RbKLlj-Je0eIVF2uyCUzxjZYBLQAThfZTeSoLQ1M9S1n4mm-GVvgEQJHCL_BXO4uVohvSBjtNHLMEg4Xri2A5dJJbP7Ahp478Sqs5X3UmI9aNLoLn57IBTTRUhcNYWo81UdI2TRNagAWjXS709-LPlgxL-tT8u1k4kadgJ3L7Y6PIzNDbXqTy0NJ9qZdP4DKtAVvVyjFNS505eBKEmvJoyAPgQpJRfsLq60sbFZWxpfMnbGVzbC7Z6L3sp7qHiK6JAdvuRQeBh8JbqCpKHGaAp2swzRi55ydXt9y9VvH4fl44oTg',
